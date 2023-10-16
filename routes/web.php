@@ -14,7 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('api')->group(function () {
-    Route::get('/getCountForFastDelivery', [CountDeliveryController::class, 'countFastDelivery'])->middleware('for_api')->name('getCountForFastDelivery');
-    Route::get('/getCountForSlowDelivery', [CountDeliveryController::class, 'countSlowDelivery'])->middleware('for_api')->name('getCountForSlowDelivery');
-});
+Route::get('/', [CountDeliveryController::class, 'check'])->name('check');

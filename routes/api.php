@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\CountDeliveryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/getCountForFastDelivery', [CountDeliveryController::class, 'countFastDelivery'])->middleware('for_api')->name('getCountForFastDelivery');
+Route::get('/getCountForSlowDelivery', [CountDeliveryController::class, 'countSlowDelivery'])->middleware('for_api')->name('getCountForSlowDelivery');
+
